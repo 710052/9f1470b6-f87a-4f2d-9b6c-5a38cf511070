@@ -37,6 +37,7 @@ class Menu {
     this.toggle = utils.getElement(SELECTORS.menuToggle);
     this.nav = utils.getElement(SELECTORS.navMenu);
     this.closeBtn = utils.getElement(SELECTORS.closeMenu);
+    this.scrollPosition = 0;
     this.init();
   }
 
@@ -50,7 +51,20 @@ class Menu {
 
   toggleMenu() {
     const isOpen = this.nav.style.right === '0px';
-    this.nav.style.right = isOpen ? '-100%' : '0';
+    
+    if (!isOpen) {
+      // Opening menu
+      this.scrollPosition = window.pageYOffset;
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${this.scrollPosition}px`;
+      document.body.style.width = '100%';
+      this.nav.style.right = '0';
+    } else {
+      // Closing menu
+      this.closeMenu();
+    }
+    
     this.toggle.setAttribute('aria-expanded', !isOpen);
     this.nav.setAttribute('aria-hidden', isOpen);
   }
@@ -59,6 +73,13 @@ class Menu {
     this.nav.style.right = '-100%';
     this.toggle.setAttribute('aria-expanded', 'false');
     this.nav.setAttribute('aria-hidden', 'true');
+    
+    // Restore scroll position
+    document.body.style.removeProperty('overflow');
+    document.body.style.removeProperty('position');
+    document.body.style.removeProperty('top');
+    document.body.style.removeProperty('width');
+    window.scrollTo(0, this.scrollPosition);
   }
 
   handleOutsideClick(event) {
