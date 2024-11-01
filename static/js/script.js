@@ -214,6 +214,8 @@ class ContentLoader {
       // Parse and display content
       if (typeof marked !== 'undefined') {
         this.contentArea.innerHTML = marked.parse(content);
+        // Initialize smooth scrolling after content is loaded
+        this.initializeSmoothScroll();
       } else {
         console.warn('Marked library not found - displaying raw markdown');
         this.contentArea.innerHTML = `<pre>${content}</pre>`;
@@ -226,6 +228,26 @@ class ContentLoader {
           <p class="error-details">${error.message}</p>
         </div>`;
     }
+  }
+
+  initializeSmoothScroll() {
+    const links = this.contentArea.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Update URL without jumping
+          history.pushState(null, null, `#${targetId}`);
+        }
+      });
+    });
   }
 }
 
@@ -286,51 +308,6 @@ class BackToTop {
   }
 }
 
-// Smooth scrolling for anchor links
-class SmoothScroll {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    // Handle all clicks on links
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (!link) return; // Not a link click
-
-      const href = link.getAttribute('href');
-      if (!href || !href.startsWith('#')) return; // Not a hash link
-
-      e.preventDefault();
-      const targetId = href.slice(1); // Remove the # from the hash
-      const targetElement = document.getElementById(targetId);
-      
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-        
-        // Update URL without jumping
-        history.pushState(null, '', href);
-      }
-    });
-
-    // Handle initial hash in URL
-    if (window.location.hash) {
-      const targetElement = document.getElementById(window.location.hash.slice(1));
-      if (targetElement) {
-        setTimeout(() => {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }, 100);
-      }
-    }
-  }
-}
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new Menu();
@@ -339,6 +316,4 @@ document.addEventListener('DOMContentLoaded', () => {
   new ContentLoader();
   new ButtonStyler();
   new BackToTop();
-  new SmoothScroll(); // Added smooth scroll initialization
 });
-
