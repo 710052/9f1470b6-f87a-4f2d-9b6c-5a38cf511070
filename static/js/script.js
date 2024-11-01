@@ -308,6 +308,56 @@ class BackToTop {
   }
 }
 
+// Smooth scrolling for all anchor links
+class SmoothScroll {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    // Handle all clicks on links
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      // Check if it's a hash link, either #something or same-page-url#something
+      if (!href || (!href.includes('#'))) return;
+
+      // Get the hash part only
+      const hash = href.split('#')[1];
+      if (!hash) return;
+
+      const targetElement = document.getElementById(hash);
+      if (!targetElement) return;
+
+      e.preventDefault();
+      
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Update URL without jumping
+      history.pushState(null, null, `#${hash}`);
+    });
+
+    // Handle initial hash in URL
+    if (window.location.hash) {
+      setTimeout(() => {
+        const hash = window.location.hash.slice(1);
+        const targetElement = document.getElementById(hash);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  }
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new Menu();
@@ -316,4 +366,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new ContentLoader();
   new ButtonStyler();
   new BackToTop();
+  new SmoothScroll();
 });
