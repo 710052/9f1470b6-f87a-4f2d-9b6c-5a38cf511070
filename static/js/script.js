@@ -74,12 +74,15 @@ class Menu {
     this.toggle.setAttribute('aria-expanded', 'false');
     this.nav.setAttribute('aria-hidden', 'true');
     
-    // Restore scroll position
+    // Restore scroll position with smooth behavior
     document.body.style.removeProperty('overflow');
     document.body.style.removeProperty('position');
     document.body.style.removeProperty('top');
     document.body.style.removeProperty('width');
-    window.scrollTo(0, this.scrollPosition);
+    window.scrollTo({
+      top: this.scrollPosition,
+      behavior: 'smooth'
+    });
   }
 
   handleOutsideClick(event) {
