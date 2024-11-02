@@ -368,3 +368,40 @@ document.addEventListener('DOMContentLoaded', () => {
   new BackToTop();
   new SmoothScroll();
 });
+
+toggleMenu() {
+  const isOpen = this.nav.style.right === '0px';
+  
+  if (!isOpen) {
+    this.scrollPosition = window.pageYOffset;
+    this.lockScroll();
+    this.nav.style.right = '0';
+  } else {
+    this.closeMenu();
+  }
+  
+  this.toggle.setAttribute('aria-expanded', !isOpen);
+  this.nav.setAttribute('aria-hidden', isOpen);
+}
+
+closeMenu() {
+  this.nav.style.right = '-100%';
+  this.toggle.setAttribute('aria-expanded', 'false');
+  this.nav.setAttribute('aria-hidden', 'true');
+  this.unlockScroll();
+}
+
+lockScroll() {
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${this.scrollPosition}px`;
+  document.body.style.width = '100%';
+}
+
+unlockScroll() {
+  document.body.style.removeProperty('overflow');
+  document.body.style.removeProperty('position');
+  document.body.style.removeProperty('top');
+  document.body.style.removeProperty('width');
+  window.scrollTo({ top: this.scrollPosition, behavior: 'smooth' });
+}
