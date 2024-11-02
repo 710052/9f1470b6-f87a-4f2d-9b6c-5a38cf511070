@@ -6,7 +6,7 @@ const SELECTORS = {
   loginForm: '#login-form',
   loginDialog: '#loginDialog',
   signupDialog: '#signupDialog',
-  martialArtsButtons: '#martialArtsButtons',
+  'menu-buttons': '#menu-buttons',
   contentArea: '#contentArea',
   backToTop: '#back-to-top'
 };
@@ -173,7 +173,7 @@ class DialogManager {
 class ContentLoader {
   constructor() {
     this.contentArea = utils.getElement(SELECTORS.contentArea);
-    this.buttonsContainer = utils.getElement(SELECTORS.martialArtsButtons);
+    this.buttonsContainer = utils.getElement(SELECTORS['menu-buttons']); // Container for buttons
     this.loadedFiles = new Map(); // Cache for loaded content
     this.init();
   }
