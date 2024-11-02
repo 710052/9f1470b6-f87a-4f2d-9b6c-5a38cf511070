@@ -73,25 +73,25 @@
                 }
             }
             loadMarkdown();
-
+    
             // Ensure elements exist before adding event listeners
             const menuToggle = document.getElementById('menu-toggle');
             const navMenu = document.getElementById('nav-menu');
             const closeMenu = document.getElementById('close-menu');
-
+    
             if (menuToggle && navMenu && closeMenu) {
                 menuToggle.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
                 });
-
+    
                 closeMenu.addEventListener('click', function() {
                     navMenu.classList.remove('active');
                 });
             }
-
-            const martialArtsButtons = document.querySelectorAll('#martialArtsButtons button');
-            if (martialArtsButtons.length > 0) {
-                martialArtsButtons.forEach(button => {
+    
+            const menuButtons = document.querySelectorAll('#menu-buttons button');
+            if (menuButtons.length > 0) {
+                menuButtons.forEach(button => {
                     button.addEventListener('click', function() {
                         window.location.href = this.getAttribute('data-art');
                     });
