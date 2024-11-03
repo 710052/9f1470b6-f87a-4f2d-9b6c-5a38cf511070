@@ -788,7 +788,7 @@ img.responsive {
     #content {
         padding-left: 30px;
         padding-right: 30px;
-        width: 85%;    /* Narrower width on desktop */
+        width: 95%;    /* Narrower width on desktop */
         max-width: 900px;  /* Optional: prevents content from getting too wide */
     }
 }
