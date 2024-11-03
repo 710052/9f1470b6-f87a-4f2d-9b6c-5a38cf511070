@@ -367,16 +367,12 @@ document.addEventListener('DOMContentLoaded', () => {
   new BackToTop();
   new SmoothScroll();
 
-  // Handle details elements to prevent jumping
+  // Add a class to details/summary elements to handle them with CSS
   document.querySelectorAll('details').forEach(details => {
-    details.querySelector('summary')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      const currentScroll = window.scrollY;
-      details.toggleAttribute('open');
-      window.scrollTo({
-        top: currentScroll,
-        behavior: 'instant'
-      });
-    });
+    details.classList.add('no-jump');
+    const summary = details.querySelector('summary');
+    if (summary) {
+      summary.classList.add('no-jump');
+    }
   });
 });
