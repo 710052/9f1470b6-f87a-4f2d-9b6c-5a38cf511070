@@ -93,8 +93,8 @@ body { /* Change from html to body */
 /* Desktop styles */
 @media screen and (min-width: 1024px) {
     #nav-menu {
-        right: -30%;  /* Starting position for desktop */
-        width: 30%;   /* Desktop width */
+        right: -25%;  /* Starting position for desktop */
+        width: 25%;   /* Desktop width */
     }
 }
 
