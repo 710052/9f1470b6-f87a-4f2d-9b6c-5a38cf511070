@@ -90,6 +90,14 @@ body { /* Change from html to body */
     border-radius: 15px;
 }
 
+/* Desktop styles */
+@media screen and (min-width: 1024px) {
+    #nav-menu {
+        right: -45%;  /* Starting position for desktop */
+        width: 45%;   /* Desktop width */
+    }
+}
+
 /* Prevent background from scrolling when sidebar is open */
 body.no-scroll {
     overflow: hidden;
