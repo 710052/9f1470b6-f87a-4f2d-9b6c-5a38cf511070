@@ -815,3 +815,10 @@ summary {
     position: relative;     /* Prevents unwanted layout shifts */
     scroll-margin-top: 0;   /* Ensures no extra top margin when focused */
 }
+
+/* Prevents scroll on clicking details/summary */
+details.no-jump summary {
+  scroll-margin-top: 0;
+  overflow: hidden;
+  position: relative;
+}
