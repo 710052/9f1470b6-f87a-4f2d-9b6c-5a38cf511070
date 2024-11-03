@@ -358,7 +358,6 @@ class SmoothScroll {
   }
 }
 
-// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new Menu();
   new Auth();
@@ -368,10 +367,16 @@ document.addEventListener('DOMContentLoaded', () => {
   new BackToTop();
   new SmoothScroll();
 
-  // Prevent default behaviour for details elements
+  // Handle details elements to prevent jumping
   document.querySelectorAll('details').forEach(details => {
-    details.addEventListener('click', (e) => {
+    details.querySelector('summary')?.addEventListener('click', (e) => {
       e.preventDefault();
+      const currentScroll = window.scrollY;
+      details.toggleAttribute('open');
+      window.scrollTo({
+        top: currentScroll,
+        behavior: 'instant'
+      });
     });
   });
 });
