@@ -357,34 +357,3 @@ class SmoothScroll {
     }
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => { 
-    new Menu();
-    new Auth();
-    new DialogManager();
-    new ContentLoader();
-    new ButtonStyler();
-    new BackToTop();
-    new SmoothScroll();
-  
-    // Add a class to details/summary elements to handle them with CSS
-    document.querySelectorAll('details').forEach(details => {
-      details.classList.add('no-jump');
-      const summary = details.querySelector('summary');
-      if (summary) {
-        summary.classList.add('no-jump');
-  
-        // Prevent default scroll behavior when clicking summary
-        summary.addEventListener('click', (event) => {
-          event.preventDefault();
-        });
-      }
-    });
-  });
-
-/* Prevents scroll on clicking details/summary */
-details.no-jump summary {
-  scroll-margin-top: 0;
-  overflow: hidden;
-  position: relative;
-}
