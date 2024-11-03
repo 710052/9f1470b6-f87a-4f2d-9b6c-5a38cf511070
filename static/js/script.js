@@ -358,7 +358,7 @@ class SmoothScroll {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
   new Menu();
   new Auth();
   new DialogManager();
@@ -373,6 +373,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const summary = details.querySelector('summary');
     if (summary) {
       summary.classList.add('no-jump');
+
+      // Prevent default scroll behavior when clicking summary
+      summary.addEventListener('click', (event) => {
+        event.preventDefault();
+      });
     }
   });
 });
