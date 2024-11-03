@@ -357,3 +357,14 @@ class SmoothScroll {
     }
   }
 }
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new Menu();
+  new Auth();
+  new DialogManager();
+  new ContentLoader();
+  new ButtonStyler();
+  new BackToTop();
+  new SmoothScroll();
+});
