@@ -802,16 +802,16 @@ img.responsive {
     }
 }
 
-/* Prevents the page from jumping when a summary element is clicked. */
-details.no-jump {
-    scroll-margin-top: 0;  /* You might also try scroll-margin-top: 10px; if needed */
-    overflow: auto;        /* Allows scrolling if there’s extra content */
-    position: relative;    /* Helps stabilize the position */
+/* Prevents the page from jumping when a summary element is clicked */
+details {
+    overflow: hidden;       /* Prevents unexpected scrolling */
+    position: relative;     /* Stabilizes layout */
+    scroll-margin-top: 0;   /* Ensures no scroll margin at the top */
 }
 
-/* Additional styling for summary to prevent jumps */
-summary.no-jump {
-    scroll-margin-top: 0;
-    position: relative;
-    cursor: pointer;       /* Ensures it looks clickable */
+/* Additional styling for <summary> */
+summary {
+    cursor: pointer;        /* Indicates it's clickable */
+    position: relative;     /* Prevents unwanted layout shifts */
+    scroll-margin-top: 0;   /* Ensures no extra top margin when focused */
 }
