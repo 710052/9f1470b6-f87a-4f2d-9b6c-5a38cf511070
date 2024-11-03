@@ -461,3 +461,12 @@ _________
 ##### Section with some ID
 
 </div>
+
+<footer>
+    <div class="socials">
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="CodePen"><i class="fab fa-codepen"></i></a>
+      <p>&copy; 2024 Josh Mountain</p>
+</footer>
