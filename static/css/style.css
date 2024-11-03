@@ -802,13 +802,16 @@ img.responsive {
     }
 }
 
-/* prevents the page from jumping when a summary element is clicked. */
+/* Prevents the page from jumping when a summary element is clicked. */
 details.no-jump {
-    scroll-margin-top: 0;
-    overflow: hidden;
+    scroll-margin-top: 0;  /* You might also try scroll-margin-top: 10px; if needed */
+    overflow: auto;        /* Allows scrolling if there’s extra content */
+    position: relative;    /* Helps stabilize the position */
 }
-/* prevents the page from jumping when a summary element is clicked. */
+
+/* Additional styling for summary to prevent jumps */
 summary.no-jump {
     scroll-margin-top: 0;
     position: relative;
+    cursor: pointer;       /* Ensures it looks clickable */
 }
