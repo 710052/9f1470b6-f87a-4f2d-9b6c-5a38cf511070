@@ -367,16 +367,21 @@ document.addEventListener('DOMContentLoaded', () => {
   new BackToTop();
   new SmoothScroll();
 
-  // Add a class to details/summary elements to handle them with CSS
+  // Refined <details>/<summary> handling to prevent jumping
   document.querySelectorAll('details').forEach(details => {
-    details.classList.add('no-jump');
     const summary = details.querySelector('summary');
+    
     if (summary) {
-      summary.classList.add('no-jump');
-
-      // Prevent default scroll behavior when clicking summary
+      // Add event listener to manually control open/close behavior
       summary.addEventListener('click', (event) => {
-        event.preventDefault();
+        event.preventDefault(); // Prevents default scroll/jump behavior
+        
+        // Toggle the `open` attribute manually to avoid the default scroll
+        if (details.hasAttribute('open')) {
+          details.removeAttribute('open');
+        } else {
+          details.setAttribute('open', '');
+        }
       });
     }
   });
