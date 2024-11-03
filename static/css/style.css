@@ -98,6 +98,14 @@ body { /* Change from html to body */
     }
 }
 
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    #nav-menu {
+        right: -60%;  /* Starting position for mobile */
+        width: 60%;   /* Mobile width */
+    }
+}
+
 /* Prevent background from scrolling when sidebar is open */
 body.no-scroll {
     overflow: hidden;
