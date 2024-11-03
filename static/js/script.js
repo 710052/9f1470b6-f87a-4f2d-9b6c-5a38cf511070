@@ -367,23 +367,3 @@ document.addEventListener('DOMContentLoaded', () => {
   new ButtonStyler();
   new BackToTop();
   new SmoothScroll();
-
-  // Only target <summary> elements within <details>
-  document.querySelectorAll('details').forEach(details => {
-    const summary = details.querySelector('summary');
-
-    if (summary) {
-      summary.addEventListener('click', (event) => {
-        // Prevent only if this specific <summary> click changes open state
-        if (details.hasAttribute('open')) {
-          details.removeAttribute('open');
-        } else {
-          details.setAttribute('open', '');
-        }
-
-        // Stop click event from bubbling to other elements on the page
-        event.stopPropagation();
-      });
-    }
-  });
-});
