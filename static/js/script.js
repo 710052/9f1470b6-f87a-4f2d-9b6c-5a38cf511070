@@ -381,3 +381,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+/* Prevents scroll on clicking details/summary */
+details.no-jump summary {
+  scroll-margin-top: 0;
+  overflow: hidden;
+  position: relative;
+}
