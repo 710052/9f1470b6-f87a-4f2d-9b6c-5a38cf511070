@@ -367,4 +367,11 @@ document.addEventListener('DOMContentLoaded', () => {
   new ButtonStyler();
   new BackToTop();
   new SmoothScroll();
+
+  // Prevent default behaviour for details elements
+  document.querySelectorAll('details').forEach(details => {
+    details.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
+  });
 });
