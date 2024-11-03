@@ -775,3 +775,29 @@ img.responsive {
     margin: 10px 0;
 }
 
+/* Desktop and Mobile Text Margins */
+#content {
+    padding-left: 20px;  /* Adds padding on the left side */
+    padding-right: 20px; /* Adds padding on the right side */
+    width: 90%;         /* Controls overall width */
+    margin: 0 auto;     /* Centers the content */
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1024px) {
+    #content {
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 65%;    /* Narrower width on desktop */
+        max-width: 900px;  /* Optional: prevents content from getting too wide */
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    #content {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 95%;    /* Wider on mobile */
+    }
+}
