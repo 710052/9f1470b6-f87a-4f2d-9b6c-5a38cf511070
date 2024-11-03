@@ -359,23 +359,25 @@ class SmoothScroll {
 }
 
 document.addEventListener('DOMContentLoaded', () => { 
-  // Initialize components
-  new Menu();
-  new Auth();
-  new DialogManager();
-  new ContentLoader();
-  new ButtonStyler();
-  new BackToTop();
-  new SmoothScroll();
-
-  // Optional: Prevent default action on <details> if needed
-  document.querySelectorAll('details').forEach(details => {
-      details.addEventListener('click', (e) => {
-          // Only prevent default if a specific condition is met
-          // Example condition: e.target is not a summary
-          if (e.target.tagName !== 'SUMMARY') {
-              e.preventDefault();
-          }
-      });
+    new Menu();
+    new Auth();
+    new DialogManager();
+    new ContentLoader();
+    new ButtonStyler();
+    new BackToTop();
+    new SmoothScroll();
+  
+    // Add a class to details/summary elements to handle them with CSS
+    document.querySelectorAll('details').forEach(details => {
+      details.classList.add('no-jump');
+      const summary = details.querySelector('summary');
+      if (summary) {
+        summary.classList.add('no-jump');
+  
+        // Prevent default scroll behavior when clicking summary
+        summary.addEventListener('click', (event) => {
+          event.preventDefault();
+        });
+      }
+    });
   });
-});
