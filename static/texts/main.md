@@ -470,3 +470,6 @@ _________
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="CodePen"><i class="fab fa-codepen"></i></a>
       <p>&copy; 2024 Josh Mountain</p>
 </footer>
+
+    <!-- Back to Top Button -->
+<button id="back-to-top" title="Go to top">⏫</button>
