@@ -101,8 +101,8 @@ body { /* Change from html to body */
 /* Mobile styles */
 @media screen and (max-width: 767px) {
     #nav-menu {
-        right: -60%;  /* Starting position for mobile */
-        width: 60%;   /* Mobile width */
+        right: -65%;  /* Starting position for mobile */
+        width: 65%;   /* Mobile width */
     }
 }
 
