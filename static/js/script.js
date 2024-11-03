@@ -359,6 +359,7 @@ class SmoothScroll {
 }
 
 document.addEventListener('DOMContentLoaded', () => { 
+  // Initialize other components
   new Menu();
   new Auth();
   new DialogManager();
@@ -370,18 +371,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Refined <details>/<summary> handling to prevent jumping
   document.querySelectorAll('details').forEach(details => {
     const summary = details.querySelector('summary');
-    
+
     if (summary) {
-      // Add event listener to manually control open/close behavior
       summary.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevents default scroll/jump behavior
-        
-        // Toggle the `open` attribute manually to avoid the default scroll
-        if (details.hasAttribute('open')) {
+        const isOpen = details.hasAttribute('open');
+
+        // Toggle the `open` attribute manually
+        if (isOpen) {
           details.removeAttribute('open');
         } else {
           details.setAttribute('open', '');
         }
+
+        // Stop event propagation to avoid unwanted side effects
+        event.stopPropagation();
       });
     }
   });
