@@ -359,7 +359,7 @@ class SmoothScroll {
 }
 
 document.addEventListener('DOMContentLoaded', () => { 
-  // Initialize other components
+  // Initialize components
   new Menu();
   new Auth();
   new DialogManager();
@@ -367,3 +367,15 @@ document.addEventListener('DOMContentLoaded', () => {
   new ButtonStyler();
   new BackToTop();
   new SmoothScroll();
+
+  // Optional: Prevent default action on <details> if needed
+  document.querySelectorAll('details').forEach(details => {
+      details.addEventListener('click', (e) => {
+          // Only prevent default if a specific condition is met
+          // Example condition: e.target is not a summary
+          if (e.target.tagName !== 'SUMMARY') {
+              e.preventDefault();
+          }
+      });
+  });
+});
