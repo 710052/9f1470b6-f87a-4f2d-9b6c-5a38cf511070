@@ -798,6 +798,6 @@ img.responsive {
     #content {
         padding-left: 15px;
         padding-right: 15px;
-        width: 95%;    /* Wider on mobile */
+        width: 85%;    /* Wider on mobile */
     }
 }
