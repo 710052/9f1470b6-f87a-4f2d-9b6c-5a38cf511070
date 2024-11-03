@@ -216,6 +216,8 @@ class ContentLoader {
         this.contentArea.innerHTML = marked.parse(content);
         // Initialize smooth scrolling after content is loaded
         this.initializeSmoothScroll();
+        // Initialize custom collapsibles after content is loaded
+        this.initializeCollapsibles();
       } else {
         console.warn('Marked library not found - displaying raw markdown');
         this.contentArea.innerHTML = `<pre>${content}</pre>`;
@@ -247,6 +249,40 @@ class ContentLoader {
           history.pushState(null, null, `#${targetId}`);
         }
       });
+    });
+  }
+
+  initializeCollapsibles() {
+    const details = this.contentArea.querySelectorAll('details');
+    details.forEach(detail => {
+        const summary = detail.querySelector('summary');
+        const content = detail.innerHTML.replace(summary.outerHTML, '');
+        
+        // Create new elements
+        const container = document.createElement('div');
+        const trigger = document.createElement('button');
+        const contentDiv = document.createElement('div');
+        
+        // Set up the new structure
+        container.className = 'collapsible-container';
+        trigger.className = 'collapsible-trigger';
+        contentDiv.className = 'collapsible-content';
+        
+        trigger.innerHTML = summary.innerHTML;
+        contentDiv.innerHTML = content;
+        contentDiv.style.display = 'none';
+        
+        // Add click handler
+        trigger.addEventListener('click', () => {
+            const isOpen = contentDiv.style.display !== 'none';
+            contentDiv.style.display = isOpen ? 'none' : 'block';
+            trigger.setAttribute('aria-expanded', !isOpen);
+        });
+        
+        // Replace the details element
+        container.appendChild(trigger);
+        container.appendChild(contentDiv);
+        detail.parentNode.replaceChild(container, detail);
     });
   }
 }
@@ -368,3 +404,4 @@ document.addEventListener('DOMContentLoaded', () => {
   new BackToTop();
   new SmoothScroll();
 });
+
