@@ -786,14 +786,13 @@ img.responsive {
 /* Desktop styles */
 @media screen and (min-width: 1024px) {
     #content {
-        padding-left: 15px;     /* Reduced padding */
-        padding-right: 15px;
-        width: 98%;             /* Slightly wider content area */
-        max-width: 1000px;      /* Increased cap for content width */
-        margin: 0 auto;         /* Center-align the content */
+        padding-left: 15px !important;  /* Reduced padding */
+        padding-right: 15px !important;
+        width: 98% !important;          /* Slightly wider content area */
+        max-width: 1000px !important;   /* Increased cap for content width */
+        margin: 0 auto !important;      /* Center-align the content */
     }
 }
-
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
