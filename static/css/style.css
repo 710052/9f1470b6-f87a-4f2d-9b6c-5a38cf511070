@@ -798,7 +798,7 @@ img.responsive {
     #content {
         padding-left: 0; /* Removes unnecessary padding */
         padding-right: 0;
-        width: 90%; /* Slightly narrower margins for mobile */
+        width: 95%; /* Slightly narrower margins for mobile */
         margin: 0 auto; /* Centers the content */
     }
 }
