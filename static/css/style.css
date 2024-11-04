@@ -797,7 +797,7 @@ img.responsive {
 @media screen and (max-width: 767px) {
     #content {
         padding: 0;         /* No padding on mobile */
-        width: 100%;        /* Full width on mobile */
+        width: 95%;        /* Full width on mobile */
         margin: 0;          /* No margin to prevent any centering or overflow */
         box-sizing: border-box; /* Ensures width includes padding/border */
     }
