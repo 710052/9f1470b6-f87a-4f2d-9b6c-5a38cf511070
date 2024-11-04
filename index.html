@@ -69,7 +69,7 @@
                     document.getElementById('content').innerHTML = sanitizedText;
                 } catch (error) {
                     console.error('Error fetching and parsing markdown:', error);
-                    document.getElementById('content').innerHTML = '<p>Error loading content. Please try again later.</p>';
+                    document.getElementById('content').innerHTML = '<p>Error loading content. Please try refreshing or try again later.</p>';
                 }
             }
             loadMarkdown();
