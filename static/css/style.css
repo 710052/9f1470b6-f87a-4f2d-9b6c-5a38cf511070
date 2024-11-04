@@ -802,23 +802,20 @@ img.responsive {
     }
 }
 
-/* Prevents the page from jumping when a summary element is clicked */
-details {
-    overflow: hidden;       /* Prevents unexpected scrolling */
-    position: relative;     /* Stabilizes layout */
-    scroll-margin-top: 0;   /* Ensures no scroll margin at the top */
+/* styles for collapsible elements */
+.collapsible-trigger {
+    background: none;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #f5f5f5;
+    font-size: inherit;
 }
 
-/* Additional styling for <summary> */
-summary {
-    cursor: pointer;        /* Indicates it's clickable */
-    position: relative;     /* Prevents unwanted layout shifts */
-    scroll-margin-top: 0;   /* Ensures no extra top margin when focused */
+.collapsible-content {
+    padding: 10px;
+    color: #f5f5f5;
 }
 
-/* Prevents scroll on clicking details/summary */
-details.no-jump summary {
-  scroll-margin-top: 0;
-  overflow: hidden;
-  position: relative;
-}
