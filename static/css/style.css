@@ -796,9 +796,9 @@ img.responsive {
 /* Mobile styles */
 @media screen and (max-width: 767px) {
     #content {
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 90%;         /* Wider on mobile */
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 98%;         /* Wider on mobile */
     }
 }
 
