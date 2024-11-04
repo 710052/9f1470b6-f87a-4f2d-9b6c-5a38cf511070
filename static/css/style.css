@@ -796,9 +796,10 @@ img.responsive {
 /* Mobile styles */
 @media screen and (max-width: 767px) {
     #content {
-        padding-left: 5px;
-        padding-right: 5px;
-        width: 98%;         /* Wider on mobile */
+        padding-left: 5px !important; /* Narrow padding on mobile */
+        padding-right: 5px !important;
+        width: 100% !important; /* Full width on mobile */
+        margin: 0 auto; /* Center-aligns if there’s any remaining space */
     }
 }
 
