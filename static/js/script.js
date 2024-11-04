@@ -173,8 +173,8 @@ class DialogManager {
 class ContentLoader {
   constructor() {
     this.contentArea = utils.getElement(SELECTORS.contentArea);
-    this.buttonsContainer = utils.getElement(SELECTORS['menu-buttons']); // Container for buttons
-    this.loadedFiles = new Map(); // Cache for loaded content
+    this.buttonsContainer = utils.getElement(SELECTORS['menu-buttons']);
+    this.loadedFiles = new Map();
     this.init();
   }
 
@@ -213,11 +213,17 @@ class ContentLoader {
       
       // Parse and display content
       if (typeof marked !== 'undefined') {
+        // Save current scroll position
+        const currentScroll = window.scrollY;
+        
         this.contentArea.innerHTML = marked.parse(content);
-        // Initialize smooth scrolling after content is loaded
-        this.initializeSmoothScroll();
-        // Initialize custom collapsibles after content is loaded
         this.initializeCollapsibles();
+        
+        // Restore scroll position
+        window.scrollTo({
+          top: currentScroll,
+          behavior: 'instant'
+        });
       } else {
         console.warn('Marked library not found - displaying raw markdown');
         this.contentArea.innerHTML = `<pre>${content}</pre>`;
@@ -230,26 +236,6 @@ class ContentLoader {
           <p class="error-details">${error.message}</p>
         </div>`;
     }
-  }
-
-  initializeSmoothScroll() {
-    const links = this.contentArea.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').slice(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-          // Update URL without jumping
-          history.pushState(null, null, `#${targetId}`);
-        }
-      });
-    });
   }
 
   initializeCollapsibles() {
@@ -272,11 +258,20 @@ class ContentLoader {
         contentDiv.innerHTML = content;
         contentDiv.style.display = 'none';
         
-        // Add click handler
-        trigger.addEventListener('click', () => {
+        // Add click handler with scroll position maintenance
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const currentScroll = window.scrollY;
+            
             const isOpen = contentDiv.style.display !== 'none';
             contentDiv.style.display = isOpen ? 'none' : 'block';
             trigger.setAttribute('aria-expanded', !isOpen);
+            
+            window.scrollTo({
+                top: currentScroll,
+                behavior: 'instant'
+            });
         });
         
         // Replace the details element
@@ -344,56 +339,6 @@ class BackToTop {
   }
 }
 
-// Smooth scrolling for all anchor links
-class SmoothScroll {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    // Handle all clicks on links
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (!link) return;
-
-      const href = link.getAttribute('href');
-      // Check if it's a hash link, either #something or same-page-url#something
-      if (!href || (!href.includes('#'))) return;
-
-      // Get the hash part only
-      const hash = href.split('#')[1];
-      if (!hash) return;
-
-      const targetElement = document.getElementById(hash);
-      if (!targetElement) return;
-
-      e.preventDefault();
-      
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-      
-      // Update URL without jumping
-      history.pushState(null, null, `#${hash}`);
-    });
-
-    // Handle initial hash in URL
-    if (window.location.hash) {
-      setTimeout(() => {
-        const hash = window.location.hash.slice(1);
-        const targetElement = document.getElementById(hash);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
-    }
-  }
-}
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new Menu();
@@ -402,6 +347,4 @@ document.addEventListener('DOMContentLoaded', () => {
   new ContentLoader();
   new ButtonStyler();
   new BackToTop();
-  new SmoothScroll();
 });
-
