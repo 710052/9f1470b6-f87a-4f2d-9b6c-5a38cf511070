@@ -786,8 +786,8 @@ img.responsive {
 /* Desktop styles */
 @media screen and (min-width: 1024px) {
     #content {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
         width: 95%;         /* Narrower width on desktop */
         max-width: 900px;    /* Prevents content from getting too wide */
     }
