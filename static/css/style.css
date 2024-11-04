@@ -781,8 +781,6 @@ img.responsive {
     padding-right: 20px; /* Adds padding on the right side */
     width: 90%;          /* Controls overall width */
     margin: 0 auto;      /* Centers the content */
-    /* Optional: add a background color for testing */
-    background-color: rgba(0, 0, 255, 0.1); /* Light blue for testing */
 }
 
 /* Desktop styles */
