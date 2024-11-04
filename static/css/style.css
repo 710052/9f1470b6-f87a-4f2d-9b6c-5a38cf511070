@@ -784,13 +784,12 @@ img.responsive {
 }
 
 /* Desktop styles */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) { /* Larger desktops */
     #content {
-        padding-left: 15px !important;  /* Reduced padding */
-        padding-right: 15px !important;
-        width: 98% !important;          /* Slightly wider content area */
-        max-width: 1000px !important;   /* Increased cap for content width */
-        margin: 0 auto !important;      /* Center-align the content */
+        padding-left: 30px; /* Larger padding on the left side */
+        padding-right: 30px; /* Larger padding on the right side */
+        width: 95%;    /* Narrower width on desktop */
+        max-width: 900px;  /* Optional: prevents content from getting too wide */
     }
 }
 
