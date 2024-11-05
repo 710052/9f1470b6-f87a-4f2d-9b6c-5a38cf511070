@@ -366,6 +366,36 @@ class SmoothScroll {
  }
 
  init() {
+   // Handle all clicks on links
+   document.addEventListener('click', (e) => {
+     // Ignore clicks on collapsible elements
+     if (e.target.closest('.collapsible-trigger')) return;
+     
+     const link = e.target.closest('a');
+     if (!link) return;
+
+     const href = link.getAttribute('href');
+     // Check if it's a hash link, either #something or same-page-url#something
+     if (!href || (!href.includes('#'))) return;
+
+     // Get the hash part only
+     const hash = href.split('#')[1];
+     if (!hash) return;
+
+     const targetElement = document.getElementById(hash);
+     if (!targetElement) return;
+
+     e.preventDefault();
+     
+     targetElement.scrollIntoView({
+       behavior: 'smooth',
+       block: 'start'
+     });
+     
+     // Update URL without jumping
+     history.pushState(null, null, `#${hash}`);
+   });
+
    // Handle initial hash in URL
    if (window.location.hash) {
      setTimeout(() => {
