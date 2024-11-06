@@ -487,8 +487,8 @@ _________
     </div>
     
 <!-- External Script -->
-   <script src="static/js/script.js"></script>
-   
-<p>&copy; <span id="year"></span>Josh Mountain</p>
+<!--   <script src="static/js/script.js"></script>
+
+<p>&copy; <span id="year"></span>Josh Mountain</p> -->
 
 </footer>
