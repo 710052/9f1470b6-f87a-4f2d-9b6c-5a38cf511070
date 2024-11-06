@@ -320,43 +320,42 @@ h1, h2, p {
     margin: 20px 0;
 }
 
-/* Footer Styles for Larger Screens */
+/* Footer Styles */
 footer {
     background-color: #1C1C1E;
     color: white;
     text-align: center;
-    padding: 10px 0 40px 0; /* Default padding with extra space at the bottom */
-}
-
-/* Adjust padding for Mobile Screens */
-@media (max-width: 768px) {
-    footer {
-        padding: 10px 0 50px 0; /* Extra bottom padding for mobile */
-    }
+    padding: 10px 0 60px 0; /* Extra padding at the bottom to make space for the button */
 }
 
 /* Social Icons Styling */
 .socials {
     display: flex;
-    justify-content: center; /* Center icons horizontally */
-    gap: 15px; /* Space between icons */
-    margin: 0 auto 10px; /* Space below icons for separation from footer text */
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto 10px;
     padding: 0;
 }
 
 /* Footer Text */
 footer p {
-    margin-top: 5px; /* Space above copyright */
-    margin-bottom: 0; /* Remove any extra space below */
+    margin-top: 5px;
+    margin-bottom: 0;
     padding: 0;
     line-height: 1.5;
 }
 
-/* Footer text adjustments for mobile */
-@media (max-width: 768px) {
-    footer p {
-        font-size: 14px; /* Adjust font size for readability on mobile */
-    }
+/* Back to Top Button Positioning */
+.back-to-top {
+    position: fixed;
+    bottom: 40px; /* Move it higher to avoid overlapping the footer */
+    right: 20px;
+    background-color: #333; /* Optional: style adjustments for visibility */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 
 /* Font Awesome Icon Styles */
