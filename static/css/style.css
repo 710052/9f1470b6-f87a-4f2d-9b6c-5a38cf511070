@@ -822,29 +822,30 @@ img.responsive {
 
 /* Styling the banner button */
 .banner-button {
-    position: fixed;       /* Fixes the button to the bottom of the viewport */
-    bottom: 0;             /* Positions it at the very bottom */
-    left: 0;               /* Aligns it to the left edge */
-    width: 100%;           /* Full width of the viewport */
-    padding: 15px;         /* Padding for a nice button size */
-    background-color: #151515; /* Button background color */
-    color: white;          /* Text color */
-    border: none;          /* Removes default border */
-    font-size: 18px;       /* Font size for the text */
-    text-align: center;    /* Centers the text */
-    cursor: pointer;       /* Cursor pointer on hover */
-    z-index: 1000;         /* Keeps it on top of other content */
+    position: fixed;             /* Fixes the button to the bottom of the viewport */
+    bottom: 0;                   /* Positions it at the very bottom */
+    left: 0;                     /* Aligns it to the left edge */
+    width: 100%;                 /* Full width of the viewport */
+    padding: 15px;               /* Padding for a nice button size */
+    background-color: #151515;   /* Button background color */
+    color: white;                /* Text color */
+    border: none;                /* Removes default border */
+    font-size: 18px;             /* Font size for the text */
+    text-align: center;          /* Centers the text */
+    cursor: pointer;             /* Cursor pointer on hover */
+    z-index: 5;                  /* Lower z-index to go behind other elements like the burger menu */
+    display: none;               /* Hidden by default, will appear on scroll */
 }
 
 /* Add a subtle shadow and hover effect */
 .banner-button:hover {
-    background-color: #181818; /* Darkens the button on hover */
+    background-color: #181818;   /* Darkens the button on hover */
 }
 
 /* Make button responsive for mobile */
 @media (max-width: 600px) {
     .banner-button {
-        font-size: 16px;    /* Slightly smaller text on mobile */
-        padding: 12px;      /* Adjust padding for mobile */
+        font-size: 16px;          /* Slightly smaller text on mobile */
+        padding: 12px;            /* Adjust padding for mobile */
     }
 }
