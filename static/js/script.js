@@ -70,23 +70,29 @@ class Menu {
  }
 
  closeMenu() {
+   const scrollPosition = this.scrollPosition;
+   
    this.nav.style.right = '-100%';
    this.toggle.setAttribute('aria-expanded', 'false');
    this.nav.setAttribute('aria-hidden', 'true');
    
-   // Restore scroll position with smooth behavior
    document.body.style.removeProperty('overflow');
    document.body.style.removeProperty('position');
    document.body.style.removeProperty('top');
    document.body.style.removeProperty('width');
-   window.scrollTo({
-     top: this.scrollPosition,
-     behavior: 'smooth'
-   });
+   
+   if (typeof scrollPosition === 'number' && scrollPosition > 0) {
+     window.scrollTo({
+       top: scrollPosition,
+       behavior: 'instant'
+     });
+   }
  }
 
  handleOutsideClick(event) {
-   if (!this.nav.contains(event.target) && !this.toggle.contains(event.target)) {
+   if (this.nav.style.right === '0px' && 
+       !this.nav.contains(event.target) && 
+       !this.toggle.contains(event.target)) {
      this.closeMenu();
    }
  }
@@ -362,12 +368,16 @@ class BackToTop {
 // Smooth scrolling for all anchor links
 class SmoothScroll {
  constructor() {
+   this.isScrolling = false;
    this.init();
  }
 
  init() {
    // Handle all clicks on links
    document.addEventListener('click', (e) => {
+     // Ignore if we're already processing a scroll
+     if (this.isScrolling) return;
+     
      // Ignore clicks on collapsible elements
      if (e.target.closest('.collapsible-trigger')) return;
      
@@ -375,7 +385,7 @@ class SmoothScroll {
      if (!link) return;
 
      const href = link.getAttribute('href');
-     // Check if it's a hash link, either #something or same-page-url#something
+     // Check if it's a hash link
      if (!href || (!href.includes('#'))) return;
 
      // Get the hash part only
@@ -387,6 +397,14 @@ class SmoothScroll {
 
      e.preventDefault();
      
+     // Set scrolling flag
+     this.isScrolling = true;
+     
+     const targetOffset = targetElement.getBoundingClientRect().top;
+     const startPosition = window.pageYOffset;
+     const targetPosition = startPosition + targetOffset;
+
+     // Perform smooth scroll
      targetElement.scrollIntoView({
        behavior: 'smooth',
        block: 'start'
@@ -394,23 +412,29 @@ class SmoothScroll {
      
      // Update URL without jumping
      history.pushState(null, null, `#${hash}`);
+     
+     // Reset scrolling flag after animation
+     setTimeout(() => {
+       this.isScrolling = false;
+     }, 1000);
    });
 
    // Handle initial hash in URL
    if (window.location.hash) {
-     setTimeout(() => {
-       const hash = window.location.hash.slice(1);
-       const targetElement = document.getElementById(hash);
-       if (targetElement) {
+     const hash = window.location.hash.slice(1);
+     const targetElement = document.getElementById(hash);
+     if (targetElement) {
+       // Delay initial scroll to ensure page is ready
+       setTimeout(() => {
          targetElement.scrollIntoView({
            behavior: 'smooth',
            block: 'start'
          });
-       }
-     }, 100);
+       }, 100);
+     }
    }
  }
-} 
+}
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -422,4 +446,3 @@ document.addEventListener('DOMContentLoaded', () => {
  new BackToTop();
  new SmoothScroll();
 });
-
