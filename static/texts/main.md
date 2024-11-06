@@ -477,15 +477,6 @@ _________
 </iframe>
 
 <a><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=710052&layout=compact&langs_count=10&exclude_repo=jhipster-books" /> </a><p>
-
-<footer>
-    <div class="socials">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="CodePen"><i class="fab fa-codepen"></i></a>
-    </div>
-</footer>
     
 <!-- External Script -->
 <!--   <script src="static/js/script.js"></script>
