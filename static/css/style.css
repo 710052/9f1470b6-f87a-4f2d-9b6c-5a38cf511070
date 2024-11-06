@@ -853,6 +853,6 @@ img.responsive {
 @media (max-width: 600px) {
     .banner-button {
         font-size: 16px;          /* Slightly smaller text on mobile */
-        padding: 18px;            /* Adjust padding for mobile */
+        padding: 20px;            /* Adjust padding for mobile */
     }
 }
