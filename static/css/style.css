@@ -325,7 +325,14 @@ footer {
     background-color: #1C1C1E;
     color: white;
     text-align: center;
-    padding: 10px 0 20px 0; /* Adds extra padding to the bottom */
+    padding: 10px 0 20px 0; /* Default padding for larger screens */
+}
+
+/* Adjust padding for mobile screens */
+@media (max-width: 768px) { /* Target screens 768px wide or smaller */
+    footer {
+        padding: 10px 0 30px 0; /* Extra padding on the bottom for mobile */
+    }
 }
 
 /* Font Awesome Icon Styles */
