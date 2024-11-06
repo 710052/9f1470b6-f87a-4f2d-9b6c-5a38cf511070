@@ -485,11 +485,5 @@ _________
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="CodePen"><i class="fab fa-codepen"></i></a>
     </div>
-    <p>&copy; <span id="year"></span>Josh Mountain</p>
+<!--    <p>&copy; <span id="year"></span>Josh Mountain</p> -->
 </footer>
-<p>
-
-
-
-    
-</p>
