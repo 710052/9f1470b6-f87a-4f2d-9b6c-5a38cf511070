@@ -25,7 +25,7 @@ body { /* Change from html to body */
 
 /* Logo Styles */
 .logo {
-    max-width: 200px; /* Default maximum width */
+    max-width: 200px !important;
     height: auto;
 }
 
