@@ -427,4 +427,6 @@ function toggleBackToTopButton() {
 window.addEventListener('scroll', toggleBackToTopButton);
 
 // footer date
-document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("year").textContent = new Date().getFullYear();
+});
