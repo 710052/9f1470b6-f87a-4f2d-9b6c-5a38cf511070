@@ -1,0 +1,24 @@
+/* Basic Reset */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+
+    margin: 0;
+    padding: 0;
+    }
+    body {
+    line-height: 1;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background: #fff;
+    }
+    ul {
+    list-style: none;
+    }
+    a {
+    text-decoration: none;
+    }
+    img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    }
