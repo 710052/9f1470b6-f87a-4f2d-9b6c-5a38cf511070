@@ -325,15 +325,47 @@ footer {
     background-color: #1C1C1E;
     color: white;
     text-align: center;
-    padding: 10px 0 40px 0; /* Adjusted padding with extra space at the bottom */
+    padding: 10px 0 40px 0; /* Default padding with extra space at the bottom */
 }
 
 /* Adjust padding for Mobile Screens */
 @media (max-width: 768px) {
     footer {
-        padding: 10px 0 50px 0; /* Extra padding on the bottom for mobile */
+        padding: 10px 0 50px 0; /* Extra bottom padding for mobile */
     }
 }
+
+/* Social Icons Styling */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between icons */
+    margin-bottom: 0; /* Remove extra margin below icons */
+    padding-bottom: 0;
+}
+
+/* Stack icons vertically on mobile screens */
+@media (max-width: 768px) {
+    .socials {
+        flex-direction: column;
+    }
+}
+
+/* Footer Text */
+footer p {
+    margin-top: 5px; /* Space above copyright text */
+    margin-bottom: 0; /* Remove any default margin below */
+    padding: 0; /* Ensure no padding affects alignment */
+    line-height: 1.5; /* Adjust for better readability */
+}
+
+/* Footer text adjustments for mobile */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 14px; /* Adjust font size for readability on mobile */
+    }
+}
+
 
 /* Font Awesome Icon Styles */
 .fab {
