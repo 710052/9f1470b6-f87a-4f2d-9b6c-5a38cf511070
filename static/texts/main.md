@@ -1,6 +1,13 @@
 <div class="markdown-container">
 
 # This is a sample
+
+<br>![GitHub stats](https://github-readme-stats.vercel.app/api?username=710052&show_icons=true&theme=radical)</br>
+
+<a><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=710052&layout=compact&langs_count=10&exclude_repo=jhipster-books" /> </a><p>
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=710052&show_icons=true&hide_rank=true&include_all_commits=true&hide=contribs,prs" /></p>
+
+
 [Source](https://github.com/im-luka/markdown-cheatsheet/blob/main/README.md)
 
 ## ⬇️ The Only Markdown Cheatsheet You Need
@@ -447,6 +454,10 @@ _________
 <p>Quick hack for <strong><em>centering image</em></strong>?</p>
 <p align="center"><img src="https://user-images.githubusercontent.com/46372998/212544874-d0654588-82f7-44f2-bbfa-2bf85fd73854.png" width="200" /></p>
 
+  <a href="https://linkedin.com/in/">
+    <img src="https://img.shields.io/badge/-Linkedin-0077B5?logo=linkedin" alt="LinkedIn">
+  </a>
+
 <details>
   <summary>One more quick hack? 🎭</summary>
   
@@ -462,11 +473,14 @@ _________
 
 </div>
 
+<iframe src="https://www.youtube.com/embed/wVYG1mu8Lg8?si=9X4hY0WI7FWp_X9I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+
 <footer>
     <div class="socials">
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="CodePen"><i class="fab fa-codepen"></i></a>
-        <p>&copy; <span id="year"></span>>Josh Mountain</p>
+        <p>&copy; <span id="year"></span>Josh Mountain</p>
 </footer>
