@@ -335,37 +335,50 @@ footer {
     }
 }
 
+/* Footer Styles for Larger Screens */
+footer {
+    background-color: #1C1C1E;
+    color: white;
+    text-align: center;
+    padding: 10px 0 40px 0; /* Default padding with extra space at the bottom */
+}
+
+/* Adjust padding for Mobile Screens */
+@media (max-width: 768px) {
+    footer {
+        padding: 10px 0 50px 0; /* Extra bottom padding for mobile */
+    }
+}
+
 /* Social Icons Styling */
 .socials {
     display: flex;
-    justify-content: center;
-    gap: 10px; /* Space between icons */
-    margin-bottom: 0; /* Remove extra margin below icons */
-    padding-bottom: 0;
+    justify-content: center; /* Center icons horizontally */
+    gap: 15px; /* Space between icons */
+    margin: 0 auto 10px; /* Space below icons for separation from footer text */
+    padding: 0;
 }
 
 /* Stack icons vertically on mobile screens */
 @media (max-width: 768px) {
     .socials {
-        flex-direction: column;
+        flex-direction: row; /* Ensure icons stay horizontal on mobile */
     }
 }
 
 /* Footer Text */
 footer p {
-    margin-top: 5px; /* Space above copyright text */
-    margin-bottom: 0; /* Remove any default margin below */
-    padding: 0; /* Ensure no padding affects alignment */
-    line-height: 1.5; /* Adjust for better readability */
+    margin-top: 5px;
+    padding: 0;
+    line-height: 1.5;
 }
 
 /* Footer text adjustments for mobile */
 @media (max-width: 768px) {
     footer p {
-        font-size: 14px; /* Adjust font size for readability on mobile */
+        font-size: 14px;
     }
 }
-
 
 /* Font Awesome Icon Styles */
 .fab {
