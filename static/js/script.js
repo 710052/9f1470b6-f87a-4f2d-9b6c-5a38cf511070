@@ -425,3 +425,6 @@ function toggleBackToTopButton() {
 
 // Event listener to track scroll and toggle button visibility
 window.addEventListener('scroll', toggleBackToTopButton);
+
+// footer date
+document.getElementById("year").textContent = new Date().getFullYear();
