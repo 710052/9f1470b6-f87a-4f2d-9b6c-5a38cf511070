@@ -320,18 +320,18 @@ h1, h2, p {
     margin: 20px 0;
 }
 
-/* Footer Styles */
+/* Footer Styles for Larger Screens */
 footer {
     background-color: #1C1C1E;
     color: white;
     text-align: center;
-    padding: 10px 0 20px 0; /* Default padding for larger screens */
+    padding: 10px 0 40px 0; /* Adjusted padding with extra space at the bottom */
 }
 
-/* Adjust padding for mobile screens */
-@media (max-width: 768px) { /* Target screens 768px wide or smaller */
+/* Adjust padding for Mobile Screens */
+@media (max-width: 768px) {
     footer {
-        padding: 10px 0 30px 0; /* Extra padding on the bottom for mobile */
+        padding: 10px 0 50px 0; /* Extra padding on the bottom for mobile */
     }
 }
 
