@@ -54,11 +54,11 @@ class Menu {
    
    if (!isOpen) {
      // Opening menu
-     this.scrollPosition = window.pageYOffset;
-     document.body.style.overflow = 'hidden';
+     this.scrollPosition = window.scrollY;
      document.body.style.position = 'fixed';
      document.body.style.top = `-${this.scrollPosition}px`;
      document.body.style.width = '100%';
+     document.body.style.overflow = 'hidden';
      this.nav.style.right = '0';
    } else {
      // Closing menu
@@ -70,23 +70,16 @@ class Menu {
  }
 
  closeMenu() {
-   const scrollPosition = this.scrollPosition;
-   
    this.nav.style.right = '-100%';
    this.toggle.setAttribute('aria-expanded', 'false');
    this.nav.setAttribute('aria-hidden', 'true');
    
-   document.body.style.removeProperty('overflow');
-   document.body.style.removeProperty('position');
-   document.body.style.removeProperty('top');
-   document.body.style.removeProperty('width');
-   
-   if (typeof scrollPosition === 'number' && scrollPosition > 0) {
-     window.scrollTo({
-       top: scrollPosition,
-       behavior: 'instant'
-     });
-   }
+   // Remove our position: fixed and restore scroll
+   document.body.style.position = '';
+   document.body.style.top = '';
+   document.body.style.width = '';
+   document.body.style.overflow = '';
+   window.scrollTo(0, this.scrollPosition);
  }
 
  handleOutsideClick(event) {
@@ -352,7 +345,10 @@ class BackToTop {
    if (!this.button) return;
    
    window.addEventListener('scroll', () => this.toggleVisibility());
-   this.button.addEventListener('click', () => this.scrollToTop());
+   this.button.addEventListener('click', (e) => {
+     e.preventDefault();
+     this.scrollToTop();
+   });
  }
 
  toggleVisibility() {
@@ -361,78 +357,40 @@ class BackToTop {
  }
 
  scrollToTop() {
-   window.scrollTo({ top: 0, behavior: 'smooth' });
+   window.scrollTo({
+     top: 0,
+     behavior: 'smooth'
+   });
  }
 }
 
 // Smooth scrolling for all anchor links
 class SmoothScroll {
  constructor() {
-   this.isScrolling = false;
    this.init();
  }
 
  init() {
-   // Handle all clicks on links
+   // Only handle anchor link clicks
    document.addEventListener('click', (e) => {
-     // Ignore if we're already processing a scroll
-     if (this.isScrolling) return;
-     
-     // Ignore clicks on collapsible elements
-     if (e.target.closest('.collapsible-trigger')) return;
-     
-     const link = e.target.closest('a');
+     const link = e.target.closest('a[href^="#"]');
      if (!link) return;
 
      const href = link.getAttribute('href');
-     // Check if it's a hash link
-     if (!href || (!href.includes('#'))) return;
+     if (!href) return;
 
-     // Get the hash part only
-     const hash = href.split('#')[1];
-     if (!hash) return;
-
-     const targetElement = document.getElementById(hash);
-     if (!targetElement) return;
-
-     e.preventDefault();
+     const targetId = href.slice(1);
+     const targetElement = document.getElementById(targetId);
      
-     // Set scrolling flag
-     this.isScrolling = true;
-     
-     const targetOffset = targetElement.getBoundingClientRect().top;
-     const startPosition = window.pageYOffset;
-     const targetPosition = startPosition + targetOffset;
-
-     // Perform smooth scroll
-     targetElement.scrollIntoView({
-       behavior: 'smooth',
-       block: 'start'
-     });
-     
-     // Update URL without jumping
-     history.pushState(null, null, `#${hash}`);
-     
-     // Reset scrolling flag after animation
-     setTimeout(() => {
-       this.isScrolling = false;
-     }, 1000);
-   });
-
-   // Handle initial hash in URL
-   if (window.location.hash) {
-     const hash = window.location.hash.slice(1);
-     const targetElement = document.getElementById(hash);
      if (targetElement) {
-       // Delay initial scroll to ensure page is ready
-       setTimeout(() => {
-         targetElement.scrollIntoView({
-           behavior: 'smooth',
-           block: 'start'
-         });
-       }, 100);
+       e.preventDefault();
+       targetElement.scrollIntoView({
+         behavior: 'smooth',
+         block: 'start'
+       });
+       history.pushState(null, null, href);
      }
-   }
+   });
  }
 }
 
