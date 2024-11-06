@@ -408,7 +408,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to scroll to the top of the page
 function scrollToTop() {
     window.scrollTo({
-        top: 0, 
+        top: 0,
         behavior: 'smooth' // Adds smooth scrolling effect
-    }); 
+    });
 }
+
+// Function to show or hide the button based on scroll position
+function toggleBackToTopButton() {
+    const button = document.getElementById('backToTopButton');
+    if (window.scrollY > 100) {
+        button.style.display = 'block';  // Show button when scrolled down
+    } else {
+        button.style.display = 'none';   // Hide button when at the top
+    }
+}
+
+// Event listener to track scroll and toggle button visibility
+window.addEventListener('scroll', toggleBackToTopButton);
