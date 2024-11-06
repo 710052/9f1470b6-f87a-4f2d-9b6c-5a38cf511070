@@ -335,21 +335,6 @@ footer {
     }
 }
 
-/* Footer Styles for Larger Screens */
-footer {
-    background-color: #1C1C1E;
-    color: white;
-    text-align: center;
-    padding: 10px 0 40px 0; /* Default padding with extra space at the bottom */
-}
-
-/* Adjust padding for Mobile Screens */
-@media (max-width: 768px) {
-    footer {
-        padding: 10px 0 50px 0; /* Extra bottom padding for mobile */
-    }
-}
-
 /* Social Icons Styling */
 .socials {
     display: flex;
@@ -359,16 +344,10 @@ footer {
     padding: 0;
 }
 
-/* Stack icons vertically on mobile screens */
-@media (max-width: 768px) {
-    .socials {
-        flex-direction: row; /* Ensure icons stay horizontal on mobile */
-    }
-}
-
 /* Footer Text */
 footer p {
-    margin-top: 5px;
+    margin-top: 5px; /* Space above copyright */
+    margin-bottom: 0; /* Remove any extra space below */
     padding: 0;
     line-height: 1.5;
 }
@@ -376,7 +355,7 @@ footer p {
 /* Footer text adjustments for mobile */
 @media (max-width: 768px) {
     footer p {
-        font-size: 14px;
+        font-size: 14px; /* Adjust font size for readability on mobile */
     }
 }
 
