@@ -1,4 +1,8 @@
 <div class="markdown-container">
+
+  <a href="https://linkedin.com/in/">
+    <img src="https://img.shields.io/badge/-Linkedin-0077B5?logo=linkedin" alt="LinkedIn">
+  </a>
   
 # Education
 
