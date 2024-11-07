@@ -1010,3 +1010,22 @@ img.responsive {
 .markdown-container li li {
     margin-left: 15px;
 }
+
+/* Special styling for badge links */
+.markdown-container a img {
+    transition: transform 0.2s ease;
+    vertical-align: middle;
+}
+
+.markdown-container a:has(img) {
+    padding: 0;
+    background: none;
+}
+
+.markdown-container a:has(img):hover {
+    transform: none;
+}
+
+.markdown-container a:has(img):hover img {
+    transform: translateY(-2px);
+}
