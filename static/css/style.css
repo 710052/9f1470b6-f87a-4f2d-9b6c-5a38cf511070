@@ -910,14 +910,14 @@ img.responsive {
 /* Mobile layout */
 @media (max-width: 480px) {
     .socials {
-        grid-template-columns: repeat(4, 1fr); /* Force 4 columns on mobile */
-        gap: 8px;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
     }
 }
 
 /* Even smaller screens */
 @media (max-width: 320px) {
     .socials {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
