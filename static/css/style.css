@@ -988,15 +988,22 @@ img.responsive {
 }
 
 .markdown-container a {
+    color: #ff7f50;        /* Soft Orange/Coral as default */
     padding: 2px 5px;
     border-radius: 3px;
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .markdown-container a:hover {
     background-color: #232323;
+    color: #ff8a8a;        /* Warm Rose on hover */
     text-decoration: none;
     transform: translateX(5px);
+}
+
+.markdown-container a:visited {
+    color: #e6e6fa;        /* Light Lavender for visited links */
 }
 
 /* Nested list items */
