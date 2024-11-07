@@ -26,4 +26,6 @@ It is a long established fact that a reader will be distracted by the readable c
 
 dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra mauris in aliquam sem fringilla ut morbi tincidunt. Ultricies integer quis auctor elit sed vulputate mi sit. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Etiam non quam lacus suspendisse. At tempor commodo ullamcorper a lacus. Magna fringilla urna porttitor rhoncus dolor purus non enim. Turpis cursus in hac habitasse platea dictumst quisque. Nulla malesuada pellentesque elit eget gravida. Molestie ac feugiat sed lectus vestibulum. Elementum sagittis vitae et leo. Orci nulla pellentesque dignissim enim sit. Pharetra convallis posuere morbi leo urna molestie at elementum eu. Convallis aenean et tortor at risus viverra adipiscing. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus a. Semper eget duis at tellus at urna condimentum mattis. Bibendum at varius vel pharetra. Vel pretium lectus quam id leo. In nisl nisi scelerisque eu ultrices vitae.
 
+<center><a><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=710052&layout=compact&langs_count=10&exclude_repo=jhipster-books" /> </a><p></center>
+
 </div>
