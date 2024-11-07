@@ -884,39 +884,36 @@ img.responsive {
 /* social media icons styling with responsive grid */
 .socials {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(8, 1fr); /* increased from 6 to 8 columns */
+    gap: 10px; /* reduced from 15px to 10px */
     justify-items: center;
     align-items: center;
     padding: 20px 0;
     max-width: 100%;
 }
 
-/* social media icons styling */
 .socials a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 20px; /* reduced from 24px to 20px */
     color: inherit;
     text-decoration: none;
     transition: transform 0.2s;
 }
 
-/* social media icons hover effect */
 .socials a:hover {
     transform: scale(1.2);
 }
 
-/* responsive grid */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .socials {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        grid-template-columns: repeat(6, 1fr); /* increased from 4 to 6 columns */
     }
 }
-/* responsive grid */
+
 @media (max-width: 480px) {
     .socials {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        grid-template-columns: repeat(4, 1fr); /* increased from 3 to 4 columns */
     }
 }
