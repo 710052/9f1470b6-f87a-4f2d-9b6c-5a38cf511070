@@ -61,7 +61,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             async function loadMarkdown() {
                 try {
-                    const response = await fetch('../static/texts/test.md');
+                    const response = await fetch('../static/texts/certs.md');
                     if (!response.ok) throw new Error('Network response was not ok');
                     const text = await response.text();
                     const parsedText = marked.parse(text);
