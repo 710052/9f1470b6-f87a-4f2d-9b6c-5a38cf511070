@@ -1,8 +1,6 @@
 <div class="markdown-container">
 
-# Lorem ipsum
-
-# Contact Us
+# Contact Me!
 
 Please fill out the form below to get in touch with us:
 
