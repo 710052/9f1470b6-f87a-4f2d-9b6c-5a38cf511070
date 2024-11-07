@@ -885,14 +885,14 @@ img.responsive {
 .socials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40px, auto));
-    max-width: 800px; /* match your markdown-container max-width */
+    max-width: 800px;
     gap: 10px;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
     margin: 0 auto;
 }
-/* social media icons styling */
+
 .socials a {
     display: inline-flex;
     align-items: center;
@@ -902,21 +902,22 @@ img.responsive {
     text-decoration: none;
     transition: transform 0.2s;
 }
-/* social media icons hover effect */
+
 .socials a:hover {
     transform: scale(1.2);
 }
-/* responsive grid */
-@media (max-width: 768px) {
-    .socials {
-        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-        max-width: 100%;
-    }
-}
-/* responsive grid for smaller screens */
+
+/* Mobile layout */
 @media (max-width: 480px) {
     .socials {
-        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+        grid-template-columns: repeat(4, 1fr); /* Force 4 columns on mobile */
         gap: 8px;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 320px) {
+    .socials {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
     }
 }
