@@ -888,11 +888,13 @@ img.responsive {
 /* social media icons styling */
 .socials {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 20px 0;
     margin: 0 auto;
+    max-width: 800px;
 }
 
 .socials a {
