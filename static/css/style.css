@@ -1029,3 +1029,15 @@ img.responsive {
 .markdown-container a:has(img):hover img {
     transform: translateY(-2px);
 }
+
+/* Bionic text for better readability */
+.markdown-container p,
+.markdown-container li {
+    font-weight: 300;      /* Light weight for regular text */
+}
+
+/* First few letters of each word */
+.markdown-container p strong,
+.markdown-container li strong {
+    font-weight: 600;      /* Bold for first parts of words */
+}
