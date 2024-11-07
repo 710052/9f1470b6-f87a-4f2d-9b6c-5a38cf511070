@@ -476,7 +476,7 @@ _________
     allowfullscreen> 
 </iframe>
 
-<a><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=710052&layout=compact&langs_count=10&exclude_repo=jhipster-books" /> </a><p>
+<center><a><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=710052&layout=compact&langs_count=10&exclude_repo=jhipster-books" /> </a></center><p>
     
 <!-- External Script -->
 <!--   <script src="static/js/script.js"></script>
