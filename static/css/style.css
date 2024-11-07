@@ -346,6 +346,10 @@ footer p {
     line-height: 1.5;
 }
 
+footer {
+    text-align: center;
+}
+
 /* Back to Top Button Positioning */
 .back-to-top {
     position: fixed;
