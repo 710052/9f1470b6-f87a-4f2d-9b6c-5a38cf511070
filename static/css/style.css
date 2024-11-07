@@ -976,3 +976,30 @@ img.responsive {
     transform: translateY(0);
     box-shadow: none;
 }
+
+/* Table of Contents styling */
+.markdown-container ul,
+.markdown-container ol {
+    padding-left: 25px;
+}
+
+.markdown-container li {
+    padding: 4px 0;
+}
+
+.markdown-container a {
+    padding: 2px 5px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.markdown-container a:hover {
+    background-color: #232323;
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+/* Nested list items */
+.markdown-container li li {
+    margin-left: 15px;
+}
