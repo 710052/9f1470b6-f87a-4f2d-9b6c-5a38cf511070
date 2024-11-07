@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./emoji-expression-glared-shocked-surprised.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./emoji-expression-glared-shocked-surprised.ico">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.6/purify.min.js"></script> <!-- Add DOMPurify library -->
+    <meta name="description" content="description">
+    <meta property="og:title" content="Contact">
+    <meta property="og:description" content="Contact">
+    <meta property="og:image" content="https://example.com/images/og-image.png">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact">
+    <meta name="twitter:description" content="description">
+    <meta name="twitter:image" content="https://example.com/images/twitter-image.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/">
+                <img src="static/images/white-logo.png" alt="logo" class="logo">
+            </a>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <nav class="main-navbar" id="main-navbar">
+            <ul class="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="../about">About</a></li>
+                <li><a href="../curriculum-vitae.pdf">CV</a></li>
+                <li><a href="../contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav id="nav-menu">
+         <div class="close-menu" id="close-menu">✕</div>
+        <ul id="menu-buttons">
+            <li><button class="btn-custom button-3d" data-art="./experience">Experience</button></li>
+            <li><button class="btn-custom button-3d" data-art="./education">Education</button></li>
+            <li><button class="btn-custom button-3d" data-art="./skills">Skills</button></li>
+            <li><button class="btn-custom button-3d" data-art="./projects">Projects</button></li>
+            <li><button class="btn-custom button-3d" data-art="./certifications">Certifications</button></li>
+        </ul>
+    </nav>
+    <div id="content"></div>
+    
+    <!-- Main Script to Fetch and Display Markdown -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            async function loadMarkdown() {
+                try {
+                    const response = await fetch('static/texts/test.md');
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    const text = await response.text();
+                    const parsedText = marked.parse(text);
+                    const sanitizedText = DOMPurify.sanitize(parsedText); // Sanitise the parsed Markdown
+                    document.getElementById('content').innerHTML = sanitizedText;
+                } catch (error) {
+                    console.error('Error fetching and parsing markdown:', error);
+                    document.getElementById('content').innerHTML = '<p>Error loading content. Please try refreshing or try again later.</p>';
+                }
+            }
+            loadMarkdown();
+    
+            // Ensure elements exist before adding event listeners
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const closeMenu = document.getElementById('close-menu');
+            // Open the menu when the menu button is clicked
+            if (menuToggle && navMenu && closeMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            // Close the menu when the close button is clicked
+                closeMenu.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                });
+            }
+            // Add event listeners to menu buttons
+            const menuButtons = document.querySelectorAll('#menu-buttons button');
+            if (menuButtons.length > 0) {
+                menuButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        window.location.href = this.getAttribute('data-art');
+                    });
+                });
+            }
+        });
+    </script>
+
+<!-- Button that scrolls to the top -->
+<button class="banner-button" onclick="scrollToTop()" id="backToTopButton">Back to Top</button>
+
+    <!-- External Script -->
+    <script src="static/js/script.js"></script>
+<footer>
+    <div class="socials">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ/#" target="_blank" title="CodePen"><i class="fab fa-codepen"></i></a>
+    </div>
+<p>&copy; <span id="year"></span>&nbsp;Josh Mountain</p>
+</footer>
+    
+</body>
+</html>
