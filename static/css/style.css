@@ -885,14 +885,12 @@ img.responsive {
     }
 }
 
-/* social media icons styling with responsive grid */
+/* social media icons styling */
 .socials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, auto));
-    max-width: 800px;
-    gap: 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     padding: 20px 0;
     margin: 0 auto;
 }
@@ -911,17 +909,8 @@ img.responsive {
     transform: scale(1.2);
 }
 
-/* Mobile layout */
 @media (max-width: 480px) {
     .socials {
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 2px !important;
-    }
-}
-
-/* Even smaller screens */
-@media (max-width: 320px) {
-    .socials {
-        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
     }
 }
