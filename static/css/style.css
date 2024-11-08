@@ -1041,3 +1041,50 @@ img.responsive {
 .markdown-container li strong {
     font-weight: 600;      /* Bold for first parts of words */
 }
+
+/* Sticky navigation that matches your design */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #151515;
+    padding: 15px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticky-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;  /* Match your current menu font size */
+    padding: 10px 20px;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.sticky-nav a:hover {
+    opacity: 0.8;
+}
+
+/* Hide burger menu when sticky nav is visible */
+.sticky-nav-active .burger-menu {
+    display: none;
+}
+
+/* Add padding to body/content to prevent overlap */
+body {
+    padding-top: 60px; /* Adjust based on your sticky nav height */
+}
+
+/* Optional: Hide on large screens if you prefer burger menu there */
+@media (min-width: 768px) {
+    .sticky-nav {
+        display: none;
+    }
+    body {
+        padding-top: 0;
+    }
+}
