@@ -1,0 +1,1106 @@
+/* ====================================
+   Table of Contents
+   ====================================
+
+   1. Base Styles & Typography
+   2. Container Styles
+   3. Header Styles
+   4. Logo Styles
+   5. Menu Toggle Functionality
+   6. Navigation Menu Styles
+   7. Button Styles
+   8. Hero Section Styles
+   9. Search Container Styles
+   10. Logo Container Styles
+   11. Navbar Styles
+   12. Styles for Markdown Content Container
+   13. Special Button Styles for Login and Register
+   14. Overlay and Dialogue Styles
+   15. Footer Styles
+   16. Social Icons Styling
+   17. Back to Top Button Positioning
+   18. Font Awesome Icon Styles
+   19. Responsive Image Class
+   20. Centered Container
+   21. Styles for 404 Page
+   22. Content Area Styles
+   23. Font Weight Normalization
+   24. Ensure the Image is Responsive
+   25. Button Container Styles
+   26. Custom Button Styles
+   27. 3D Button Styles
+   28. Menu Toggle Functionality (Fixed Position)
+   29. Container for Markdown Content
+   30. Back to Top Button
+   31. Content and Markdown Container Styles
+   32. For Headers within Markdown
+   33. If Images are in Markdown
+   34. Content Pre
+   35. Content Table
+   36. Content th, td
+   37. Content ul, ol
+   38. Content Blockquote
+   39. Content Pre, Img
+   40. Root Variables
+   41. Media Queries for Logo and Containers
+   42. Responsive Image Settings
+   43. Menu Buttons Styling
+   44. Desktop and Mobile Text Margins
+   45. Styles for Collapsible Elements
+   46. Styling the Banner Button
+   47. Social Media Icons Styling
+   48. Form Styling
+   49. Table of Contents Styling
+   50. Sticky Navigation
+   51. Add Padding to Body/Content
+   52. Optional: Hide on Large Screens
+*/
+
+/* ====================================
+   1. Base Styles & Typography
+   ==================================== */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #1C1C1E;
+    color: #f5f5f5;
+}
+
+/* ====================================
+   2. Container Styles
+   ==================================== */
+body {
+    background-color: #1C1C1E;
+    color: #fff;
+}
+
+/* ====================================
+   3. Header Styles
+   ==================================== */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* ====================================
+   4. Logo Styles
+   ==================================== */
+.logo {
+    max-width: 200px !important;
+    height: auto;
+}
+
+/* Media queries for different screen sizes */
+@media (min-width: 768px) {
+    .logo {
+        max-width: 180px; /* Adjust for medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        max-width: 150px; /* Adjust for larger screens */
+    }
+}
+
+@media (min-width: 1440px) {
+    .logo {
+        max-width: 120px; /* Adjust for very large screens */
+    }
+}
+
+/* ====================================
+   5. Menu Toggle Functionality
+   ==================================== */
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* ====================================
+   6. Navigation Menu Styles
+   ==================================== */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -75%; /* Change from -50% to -75% */
+    width: 75%; /* Change from 50% to 75% */
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #232323 50%,
+        #232323 50%
+    );
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+    border-radius: 15px;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1024px) {
+    #nav-menu {
+        right: -19%;  /* Starting position for desktop */
+        width: 19%;   /* Desktop width */
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    #nav-menu {
+        right: -65%;  /* Starting position for mobile */
+        width: 65%;   /* Mobile width */
+    }
+}
+
+/* Prevent background from scrolling when sidebar is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Close button styling */
+#close-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 30px;
+}
+
+/* Styles for the menu items */
+#nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#nav-menu ul li {
+    margin: 20px 0;
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* ====================================
+   7. Button Styles
+   ==================================== */
+.login, .get-started {
+    background-color: #003a80;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.login:hover, .get-started:hover {
+    background-color: #001a40;
+}
+
+.get-started {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* ====================================
+   8. Hero Section Styles
+   ==================================== */
+.hero {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* ====================================
+   9. Search Container Styles
+   ==================================== */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ====================================
+   10. Logo Container Styles
+   ==================================== */
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.title {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* ====================================
+   11. Navbar Styles
+   ==================================== */
+.navbar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #1C1C1E;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.navbar li {
+    padding: 0 20px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: light;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.navbar li a:hover {
+    background-color: #F7931A;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ====================================
+   12. Styles for Markdown Content Container
+   ==================================== */
+#markdown-content {
+    display: block;
+    visibility: visible;
+    height: auto;
+    color: black;
+    background-color: white;
+}
+
+/* ====================================
+   13. Special Button Styles for Login and Register
+   ==================================== */
+#loginBtn, #signupBtn {
+    background-color: #007bff;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+#loginBtn:hover, #signupBtn:hover {
+    background-color: #0056b3;
+}
+
+/* ====================================
+   14. Overlay and Dialogue Styles
+   ==================================== */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+}
+
+.dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1050;
+    display: none;
+}
+
+.form-actions button {
+    margin: 10px 5px;
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-actions button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .navbar li a {
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+}
+
+/* ====================================
+   15. Footer Styles
+   ==================================== */
+footer {
+    background-color: #1C1C1E;
+    color: white;
+    text-align: center;
+    padding: 10px 0 20px 0;
+    margin-bottom: 60px;
+}
+
+/* ====================================
+   16. Social Icons Styling
+   ==================================== */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto 10px;
+    padding: 0;
+}
+
+/* ====================================
+   17. Back to Top Button Positioning
+   ==================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* ====================================
+   18. Font Awesome Icon Styles
+   ==================================== */
+.fab {
+    color: #333;
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.fa-facebook { color: #3b5998; }
+.fa-twitter { color: #1DA1F2; }
+.fa-instagram { color: #E1306C; }
+.fa-linkedin { color: #0077B5; }
+.fa-youtube { color: #FF0000; }
+.fa-tiktok { color: #FE2C55; }
+.fa-reddit { color: #FF4500; }
+.fa-pinterest { color: #BD081C; }
+.fa-snapchat { color: #FFFC00; }
+.fa-whatsapp { color: #25D366; }
+.fa-discord { color: #7289DA; }
+.fa-twitch { color: #6441A4; }
+.fa-telegram { color: #0088cc; }
+.fa-medium { color: #02b875; }
+.fa-github { color: #333; }
+.fa-stack-overflow { color: #f48024; }
+.fa-codepen { color: #000; }
+.fa-behance { color: #1769ff; }
+.fa-dribbble { color: #ea4c89; }
+.fa-vimeo { color: #1ab7ea; }
+.fa-spotify { color: #1ED760; }
+.fa-soundcloud { color: #ff5500; }
+.fa-slack { color: #4A154B; }
+.fa-skype { color: #00aff0; }
+.fa-discourse { color: #333; }
+.fa-wordpress { color: #21759b; }
+.fa-blogger { color: #FF5722; }
+.fa-tumblr { color: #35465c; }
+.fa-patreon { color: #f96854; }
+.fa-paypal { color: #003087; }
+.fa-amazon { color: #FF9900; }
+.fa-ebay { color: #E53238; }
+.fa-etsy { color: #F16521; }
+.fa-shopify { color: #96bf48; }
+.fa-aliexpress { color: #FF6600; }
+
+/* ====================================
+   19. Responsive Image Class
+   ==================================== */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ====================================
+   20. Centered Container
+   ==================================== */
+.centered-container {
+    max-width: 75%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .centered-container {
+        max-width: 90%;
+    }
+}
+
+/* ====================================
+   21. Styles for 404 Page
+   ==================================== */
+.not-found-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.not-found-container h1, .not-found-container h2, .not-found-container p {
+    margin: 10px 0;
+}
+
+.home-button-gif {
+    display: block;
+    margin: 15px auto;
+}
+
+/* ====================================
+   22. Content Area Styles
+   ==================================== */
+#content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+/* ====================================
+   23. Font Weight Normalization
+   ==================================== */
+body, p, h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* ====================================
+   24. Ensure the Image is Responsive
+   ==================================== */
+img.responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    img.responsive {
+        width: 50%;
+    }
+}
+
+/* ====================================
+   25. Button Container Styles
+   ==================================== */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 20px;
+}
+
+/* ====================================
+   26. Custom Button Styles
+   ==================================== */
+.btn-custom {
+    flex: 1 1 180px;
+    max-width: 240px;
+    min-width: 100px;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    background-color: #444;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    width: 200px;
+    height: 50px;
+}
+
+.btn-custom:hover {
+    background-color: #555;
+}
+
+.btn-custom.button-1, .btn-custom.button-2, .btn-custom.button-3, .btn-custom.button-4, .btn-custom.button-5, .btn-custom.button-6, .btn-custom.button-7, .btn-custom.button-8, .btn-custom.button-9, .btn-custom.button-10, .btn-custom.button-11 {
+    background-color: #478996;
+}
+
+/* ====================================
+   27. 3D Button Styles
+   ==================================== */
+.button-3d {
+    background-color: #478996;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px #607d8b;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+}
+
+.button-3d:hover, .button-3d:focus {
+    background-color: #F7931A;
+    box-shadow: 0 6px #c2185b;
+    transform: translateY(-2px);
+}
+
+.button-3d:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px #333333;
+}
+
+/* ====================================
+   28. Menu Toggle Functionality (Fixed Position)
+   ==================================== */
+.menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: fixed; /* Changed from absolute to fixed */
+    right: 20px;
+    top: 20px; /* Add this to position it at the top */
+    z-index: 2000; /* Ensure it's above other content */
+}
+
+/* ====================================
+   29. Container for Markdown Content
+   ==================================== */
+#markdown-content {
+    display: inline; /* Ensure the markdown content fits inline */
+    visibility: visible; /* Ensure visibility */
+    height: auto; /* Adjust height */
+    color: black; /* Text color */
+    background-color: white; /* Background color */
+    padding: 10px; /* Add padding for spacing */
+    border: 1px solid #ccc; /* Add border for visual distinction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+}
+
+.markdown-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: transparent; /* Make the background color transparent */
+    color: #fff; /* Ensure the text color is white for readability */
+    border-radius: 5px;
+    border: none; /* Remove the border */
+    box-shadow: none; /* Remove the box-shadow */
+}
+
+/* ====================================
+   30. Back to Top Button
+   ==================================== */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    display: none;
+    font-size: 34px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+    line-height: normal;
+}
+
+/* ====================================
+   31. Content and Markdown Container Styles
+   ==================================== */
+#content, .markdown-container {
+    white-space: normal; /* Ensure lines wrap */
+    word-wrap: break-word; /* Break long words if necessary */
+    overflow-wrap: break-word; /* Alternative for long words */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* ====================================
+   32. For Headers within Markdown
+   ==================================== */
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+    line-height: 1.3; /* Reduce line height for headers */
+}
+
+/* ====================================
+   33. If Images are in Markdown
+   ==================================== */
+#content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ====================================
+   34. Content Pre
+   ==================================== */
+#content pre {
+    white-space: pre-wrap; /* Wrap code blocks */
+    overflow-x: auto; /* Add horizontal scroll if content is too wide */
+    max-width: 100%;
+}
+
+/* ====================================
+   35. Content Table
+   ==================================== */
+#content table {
+    width: 100%;
+    overflow-x: auto;
+    display: block; /* Makes tables responsive */
+    border-collapse: collapse;
+}
+
+/* ====================================
+   36. Content th, td
+   ==================================== */
+#content th, #content td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+    word-break: break-word; /* Wraps long content in table cells */
+}
+
+/* ====================================
+   37. Content ul, ol
+   ==================================== */
+#content ul, #content ol {
+    padding-left: 20px;
+    margin-bottom: 1em; /* Adds spacing between lists and other elements */
+    line-height: 1.6;
+}
+
+/* ====================================
+   38. Content Blockquote
+   ==================================== */
+#content blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 10px;
+    margin: 1em 0;
+    color: #666;
+    font-style: italic;
+}
+
+/* ====================================
+   39. Content Pre, Img
+   ==================================== */
+#content pre, #content img {
+    margin-bottom: 1em; /* Adds spacing below code blocks and images */
+}
+
+/* ====================================
+   40. Root Variables
+   ==================================== */
+:root {
+    --background-color: #1C1C1E;
+    --text-color: #f5f5f5;
+    --accent-color: #478996;
+    --hover-color: #F7931A;
+}
+
+/* ====================================
+   41. Media Queries for Logo and Containers
+   ==================================== */
+@media (min-width: 768px) {
+    .logo {
+        max-width: 180px;
+    }
+    .centered-container {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo, .responsive-image {
+        max-width: 50%;
+    }
+}
+
+/* ====================================
+   42. Responsive Image Settings
+   ==================================== */
+.responsive-image, img.responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ====================================
+   43. Menu Buttons Styling
+   ==================================== */
+#menu-buttons {
+    background-color: #232323;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+}
+
+#menu-buttons li {
+    background-color: #232323;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* ====================================
+   44. Desktop and Mobile Text Margins
+   ==================================== */
+#content {
+    padding-left: 20px;  /* Adds padding on the left side */
+    padding-right: 20px; /* Adds padding on the right side */
+    width: 90%;          /* Controls overall width */
+    margin: 0 auto;      /* Centers the content */
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1024px) { /* Larger desktops */
+    #content {
+        padding-left: 30px; /* Larger padding on the left side */
+        padding-right: 30px; /* Larger padding on the right side */
+        width: 95%;    /* Narrower width on desktop */
+        max-width: 900px;  /* Optional: prevents content from getting too wide */
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    #content {
+        padding: 0;         /* No padding on mobile */
+        width: 95%;        /* Full width on mobile */
+        margin: 0;          /* No margin to prevent any centering or overflow */
+        box-sizing: border-box; /* Ensures width includes padding/border */
+    }
+}
+
+/* ====================================
+   45. Styles for Collapsible Elements
+   ==================================== */
+.collapsible-trigger {
+    background: none;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    color: #f5f5f5;
+    font-size: inherit;
+}
+
+.collapsible-content {
+    padding: 10px;
+    color: #f5f5f5;
+}
+
+/* ====================================
+   46. Styling the Banner Button
+   ==================================== */
+.banner-button {
+    position: fixed;             /* Fixes the button to the bottom of the viewport */
+    bottom: 0;                   /* Positions it at the very bottom */
+    left: 0;                     /* Aligns it to the left edge */
+    width: 100%;                 /* Full width of the viewport */
+    padding: 15px;               /* Padding for a nice button size */
+    background-color: #151515;   /* Button background color */
+    color: white;                /* Text color */
+    border: none;                /* Removes default border */
+    font-size: 18px;             /* Font size for the text */
+    text-align: center;          /* Centers the text */
+    cursor: pointer;             /* Cursor pointer on hover */
+    z-index: 5;                  /* Lower z-index to go behind other elements like the burger menu */
+    display: none;               /* Hidden by default, will appear on scroll */
+}
+
+/* Add a subtle shadow and hover effect */
+.banner-button:hover {
+    background-color: #181818;   /* Darkens the button on hover */
+}
+
+/* Make button responsive for mobile */
+@media (max-width: 600px) {
+    .banner-button {
+        font-size: 16px;          /* Slightly smaller text on mobile */
+        padding: 20px;            /* Adjust padding for mobile */
+    }
+}
+
+/* ====================================
+   47. Social Media Icons Styling
+   ==================================== */
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 480px) {
+    .socials {
+        gap: 15px;
+    }
+}
+
+/* ====================================
+   48. Form Styling
+   ==================================== */
+#contact-form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #232323;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+#contact-form label {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#contact-form input[type="submit"] {
+    background-color: #232323;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+#contact-form input[type="submit"]:hover {
+    background-color: #1C1C1C;
+    border-color: #666;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#contact-form input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ====================================
+   49. Table of Contents Styling
+   ==================================== */
+.markdown-container ul,
+.markdown-container ol {
+    padding-left: 25px;
+}
+
+.markdown-container li {
+    padding: 4px 0;
+}
+
+.markdown-container a {
+    color: #ff7f50;        /* Soft Orange/Coral as default */
+    padding: 2px 5px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.markdown-container a:hover {
+    background-color: #232323;
+    color: #ff8a8a;        /* Warm Rose on hover */
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+.markdown-container a:visited {
+    color: #e6e6fa;        /* Light Lavender for visited links */
+}
+
+/* Nested list items */
+.markdown-container li li {
+    margin-left: 15px;
+}
+
+/* Special styling for badge links */
+.markdown-container a img {
+    transition: transform 0.2s ease;
+    vertical-align: middle;
+}
+
+.markdown-container a:has(img) {
+    padding: 0;
+    background: none;
+}
+
+.markdown-container a:has(img):hover {
+    transform: none;
+}
+
+.markdown-container a:has(img):hover img {
+    transform: translateY(-2px);
+}
+
+/* Bionic text for better readability */
+.markdown-container p,
+.markdown-container li {
+    font-weight: 300;      /* Light weight for regular text */
+}
+
+/* First few letters of each word */
+.markdown-container p strong,
+.markdown-container li strong {
+    font-weight: 600;      /* Bold for first parts of words */
+}
+
+/* ====================================
+   50. Sticky Navigation
+   ==================================== */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #151515;
+    padding: 15px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sticky-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;  /* Match your current menu font size */
+    padding: 10px 20px;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.sticky-nav a:hover {
+    opacity: 0.8;
+}
+
+/* Hide burger menu when sticky nav is visible */
+.sticky-nav-active .burger-menu {
+    display: none;
+}
+
+/* ====================================
+   51. Add Padding to Body/Content
+   ==================================== */
+body {
+    padding-top: 60px; /* Adjust based on your sticky nav height */
+}
+
+/* ====================================
+   52. Optional: Hide on Large Screens
+   ==================================== */
+@media (min-width: 768px) {
+    .sticky-nav {
+        display: none;
+    }
+    body {
+        padding-top: 0;
+    }
+}
