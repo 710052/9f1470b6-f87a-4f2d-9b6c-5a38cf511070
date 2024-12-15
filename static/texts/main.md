@@ -32,6 +32,9 @@ Let's dive into it. ⤵️
 
 #### Table of Contents
 
+<details>
+  <summary>Click here for contents table</summary>
+
 1. [Paragraph](#paragraph)
 2. [Headings](#headings)
 3. [Emphasis](#emphasis)
@@ -50,8 +53,9 @@ Let's dive into it. ⤵️
 13. [Horizontal Line](#horizontalline)
 14. [HTML](#html)
 
----
+</details>
 
+---
 <a name="paragraph" />
 
 ## Paragraph
