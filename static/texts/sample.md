@@ -1,14 +1,15 @@
-\title{Sample LaTeX Page}
-\author{Your Name}
-\date{\today}
+# Sample LaTeX Page
 
-This is a sample LaTeX page that demonstrates various mathematical expressions and formatting capabilities.
+**Author:** Your Name  
+**Date:** Today
 
-\section{Basic Math Examples}
+---
 
-Here's an example of inline math: $f(x) = x^2 + 2x + 1$ within text.
+## Basic Math Examples
 
-Here's a displayed equation:
+Inline math: $f(x) = x^2 + 2x + 1$
+
+Displayed equation:
 
 $$E = mc^2$$
 
@@ -22,68 +23,52 @@ $$
 \end{aligned}
 $$
 
-\section{Theorem Example}
+---
 
-\begin{theorem}
-For any right triangle with sides $a$, $b$, and hypotenuse $c$:
+## Theorem Example
+
+**Theorem**: For any right triangle with sides $a$, $b$, and hypotenuse $c$:
+
 $$a^2 + b^2 = c^2$$
-\end{theorem}
 
-\begin{proof}
-This is Pythagoras' theorem. The proof involves showing that the area of squares constructed on the two legs equals the area of the square on the hypotenuse.
-\end{proof}
+**Proof**: This is Pythagoras' theorem. The proof involves showing that the area of squares constructed on the two legs equals the area of the square on the hypotenuse.
 
-\section{Matrix Operations}
+---
 
-Here's a matrix equation:
+## Calculus Examples
 
-$$
-\begin{pmatrix}
-a & b \\
-c & d
-\end{pmatrix}
-\begin{pmatrix}
-x \\
-y
-\end{pmatrix} =
-\begin{pmatrix}
-ax + by \\
-cx + dy
-\end{pmatrix}
-$$
-
-\section{Calculus Examples}
-
-The definition of a derivative:
+Definition of a derivative:
 
 $$\lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$
 
-A double integral:
+---
 
-$$\iint_D f(x,y) \,dx\,dy = \int_a^b\int_c^d f(x,y) \,dy\,dx$$
-
-\section{Statistics}
+## Statistics
 
 The normal distribution probability density function:
 
 $$f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
-\section{Complex Numbers}
+---
+
+## Complex Numbers
 
 Euler's famous identity:
 
 $$e^{i\pi} + 1 = 0$$
 
-\section{Series}
+---
+
+## Series
 
 The sum of a geometric series:
 
 $$\sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}, \quad |r| < 1$$
 
-\section{Physics}
+---
+
+## Physics
 
 The Schrödinger equation:
 
 $$i\hbar\frac{\partial}{\partial t}\Psi = \hat{H}\Psi$$
-
-Note: All equations are rendered using KaTeX in the browser. Some advanced LaTeX features might not be supported by KaTeX.
